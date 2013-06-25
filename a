@@ -1,0 +1,21 @@
+#!/bin/sh
+hostalias="203 204 8 7"
+hosts=(192.168.1.203 192.168.1.204 10.109.1.8 10.109.1.7)
+users=(webdb root aiweb aiweb)
+passwords=(webdb root4321 aiweb!@# aiweb!@#)
+index=0
+position=0
+for ip in $hostalias
+do
+    if [ $1 = $ip ]
+    then
+	position=$index
+    fi
+    (( index = index + 1))
+done
+expect -c "
+spawn ssh ${users[position]}@${hosts[position]}
+expect {
+\"*assword*\" { send \"${passwords[position]}\r\";interact}
+}
+"

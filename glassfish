@@ -1,0 +1,8 @@
+#!/bin/sh
+cd ~/opt/glassfish3/glassfish/bin/
+if test -z "$1"
+then
+    asadmin start-domain
+else
+    asadmin stop-domain
+fi

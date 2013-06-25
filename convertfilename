@@ -1,0 +1,2 @@
+#!/bin/sh
+java -classpath ~/.bin/ ConvertFileNameEncoding $1 $2 $3

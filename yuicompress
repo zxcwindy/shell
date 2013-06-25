@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -jar /home/asiainfo/git/yuicompressor/build/yuicompressor-2.4.8pre.jar --type js --charset utf-8 --preserve-semi --nomunge ${1}

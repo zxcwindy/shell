@@ -1,0 +1,12 @@
+#!/usr/bin/expect
+spawn su db2inst1
+expect "密码*"
+send "db2inst1\r"
+expect "bash*"
+send "cd\r"
+interact
+# set timeout 1
+# expect "bash*"
+#send "./start.sh\r"
+#send "exit\r"
+# send "./start.sh"
