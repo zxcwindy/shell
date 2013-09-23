@@ -2,7 +2,7 @@
 cd ~/opt/glassfish3/glassfish/bin/
 if test -z "$1"
 then
-    asadmin start-domain
+    asadmin start-domain | tail -f ~/opt/glassfish3/glassfish/domains/domain1/logs/server.log
 else
     asadmin stop-domain
 fi

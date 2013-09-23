@@ -1,0 +1,7 @@
+#!/bin/sh
+if test -z "$2"
+then
+    java -classpath ~/.bin/ Kill "$1"
+else
+    java -classpath ~/.bin/ Kill "$1" $2
+fi    

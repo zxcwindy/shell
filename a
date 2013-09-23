@@ -1,8 +1,8 @@
 #!/bin/sh
-hostalias="203 204 8 7"
-hosts=(192.168.1.203 192.168.1.204 10.109.1.8 10.109.1.7)
-users=(webdb root aiweb aiweb)
-passwords=(webdb root4321 aiweb!@# aiweb!@#)
+hostalias="203 204 8 7 53 3 158"
+hosts=(192.168.1.203 192.168.1.204 10.109.1.8 10.109.1.7 10.105.4.53 192.168.0.3 10.95.239.158)
+users=(webdb root aiapp aiweb kpi root db2inst1)
+passwords=(webdb root4321 aiapp123 aiweb!@# kpi123kpi 123456 db2opr2010)
 index=0
 position=0
 for ip in $hostalias
