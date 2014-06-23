@@ -1,4 +1,4 @@
 #!/bin/sh
-cd ~/opt/jetty-distribution-8.1.11.v20130520/
+cd ~/opt/jetty-distribution-8.1.14.v20131031
 
 java -jar start.jar
