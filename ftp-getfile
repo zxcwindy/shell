@@ -1,0 +1,8 @@
+#/bin/bash
+ftp -n 10.70.41.126 << FTPEND  
+user joy go2hell  
+bin            
+cd /Temp/dmp                       
+get $1
+bye                          
+FTPEND

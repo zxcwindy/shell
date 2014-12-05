@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#应急库
+yjk=(_NGZJ \\\/dsshome\\\/db2nfs\\\/dw\\\/aiomnivision\\\/dacplog md.metadbcfg)
+
+case $1 in
+    "yjk") CONF=(${yjk[*]});;
+    *) echo "未知的配置"
+	exit;;
+esac
+cd /home/david/workspace/demo/pst-proc/target
+cp pst-proc-0.0.1-SNAPSHOT.jar pst-proc-0.0.1-SNAPSHOT.$1.jar
+jar -xf pst-proc-0.0.1-SNAPSHOT.jar META-INF/MANIFEST.MF
+cat meta.mf > META-INF/MANIFEST.MF
+jar -ufm pst-proc-0.0.1-SNAPSHOT.$1.jar meta.mf
+jar -xf pst-proc-0.0.1-SNAPSHOT.jar conf/pst_proc.properties
+sed -i "s/metaprj=_NGZJ/metaprj=${CONF[0]}/g;s/logPath=/logPath=${CONF[1]}/g;s/METADBCFG=md.metadbcfg/METADBCFG=${CONF[2]}/g " conf/pst_proc.properties
+jar -uf pst-proc-0.0.1-SNAPSHOT.$1.jar conf/pst_proc.properties
+mv pst-proc-0.0.1-SNAPSHOT.$1.jar ~/tmp/proc

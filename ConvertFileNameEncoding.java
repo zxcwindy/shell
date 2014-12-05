@@ -9,7 +9,7 @@ public class ConvertFileNameEncoding {
 		String fileParentPath = file.getParent();		
 		String renamePath = fileParentPath + File.separator + new String(file.getName().getBytes(fromEncoding),toEncoding);
 		File newFile = new File(renamePath);
-		file.renameTo(newFile);
+		System.out.println("convert: " + file.renameTo(newFile));
 		if(newFile.isDirectory()){
 			File[] files = newFile.listFiles();
 			for(File temp: files){
