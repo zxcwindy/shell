@@ -1,0 +1,5 @@
+#!/bin/bash
+# eclipse tab样式调整版本
+export SWT_GTK3=0
+env /usr/share/themes/oxygen-gtk/gtk-2.0/gtkrc:.gtkrc-eclipse
+~/opt/eclipse-neon/eclipse
