@@ -1,2 +1,3 @@
 #!/bin/sh
+#$1 path,$2 fromEncoding,$3 toEncoding
 java -classpath ~/.bin/ ConvertFileNameEncoding $1 $2 $3

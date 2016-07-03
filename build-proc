@@ -1,17 +1,54 @@
 #!/bin/bash
 
-#应急库
-yjk=(_NGZJ \\\/dsshome\\\/db2nfs\\\/dw\\\/aiomnivision\\\/dacplog md.metadbcfg)
 
 case $1 in
-    "yjk") CONF=(${yjk[*]});;
-    *) echo "未知的配置"
+
+    "yjk") CONF=(_NGZJ \\\/dsshome\\\/db2nfs\\\/dw\\\/aiomnivision\\\/dacplog md.metadbcfg);;
+
+    "ngtest") CONF=(_NGZJ \\\/app\\\/dmp\\\/dmp-app\\\/applications\\\/proc-ngzj md.metadbcfg);;
+
+    "test-tz") CONF=(_NGZJ \\\/app\\\/dmp\\\/dmp-app\\\/applications\\\/proc-tz md.metadbcfg);;
+
+    "ssagent1") CONF=(_ZJ \\\/data\\\/etl\\\/ss_agent1\\\/dmp\\\/proc md.metadbcfg);;
+
+    "ssagent2") CONF=(_ZJ \\\/data\\\/etl\\\/ss_agent2\\\/dmp\\\/proc md.metadbcfg);;
+
+    "local") CONF=(_NGZJ \\\/home\\\/david\\\/tmp\\\/proc md.metadbcfg);;
+
+    "boss") CONF=(_BOSS \\\/app\\\/dmp\\\/dmp-app\\\/applications\\\/proc-boss md.metadbcfg);;
+
+    "nb") CONF=(_NGZJ \\\/app\\\/dmp\\\/dmp-app\\\/applications\\\/proc-ngzj-nb md.metadbcfg_nb);;
+    
+    "bi") CONF=(_NGZJ \\\/app\\\/biweb\\\/bi-web\\\/bi-web-domain\\\/logs md.metadbcfg);;
+    
+    "hbase") CONF=(_NGZJ \\\/app\\\/dacp\\\/applications\\\/proc\\\/logs md.metadbcfg);;
+
+    "zck") CONF=(_NGZJ \\\/dsshome\\\/db2nfs\\\/dw\\\/aiomnivision\\\/bin\\\/dacp\\\/proc-ngzj\\\/logs md.metadbcfg_zck);;
+
+    "ssagent3") CONF=(_NGZJ \\\/data\\\/etl\\\/ss_agent3\\\/dmp\\\/proc\\\/_logs md.metadbcfg);;
+
+    "zjtest") CONF=(_ZJNGZJ \\\/app\\\/dmp\\\/dmp-app\\\/applications\\\/proc-zjtest md.metadbcfg);;
+    *) echo "未知的配置
+    yjk #应急库
+    ngtest #13浙江本地
+    ssagent1 #33 ss_agent1
+    ssagent2 #33 ss_agent2
+    test-tz # 台州
+    local #本地
+    boss #终端
+    nb   #宁波
+    bi #生产
+    zck #生产
+    hbase #hbase导入
+    zjtest #测试开发管理
+"
 	exit;;
 esac
-cd /home/david/workspace/demo/pst-proc/target
+
+# cd /home/david/workspace/demo/pst-proc/target
+cd /home/david/workspace/demo/pst-proc-new-log/target/
 cp pst-proc-0.0.1-SNAPSHOT.jar pst-proc-0.0.1-SNAPSHOT.$1.jar
 jar -xf pst-proc-0.0.1-SNAPSHOT.jar META-INF/MANIFEST.MF
-cat meta.mf > META-INF/MANIFEST.MF
 jar -ufm pst-proc-0.0.1-SNAPSHOT.$1.jar meta.mf
 jar -xf pst-proc-0.0.1-SNAPSHOT.jar conf/pst_proc.properties
 sed -i "s/metaprj=_NGZJ/metaprj=${CONF[0]}/g;s/logPath=/logPath=${CONF[1]}/g;s/METADBCFG=md.metadbcfg/METADBCFG=${CONF[2]}/g " conf/pst_proc.properties
