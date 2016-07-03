@@ -1,0 +1,17 @@
+#!/bin/bash
+# $1 启动文件 ; $2 frame名
+if [ -z $1 ] || [ -z $2 ] ; then
+    echo "exit"
+    exit 0
+fi
+
+isActive=$(ps -ef|grep $1 | grep -v grep | wc -l)
+
+if [ $isActive == 2 ]
+then
+echo "$1"
+  $1
+else
+echo "$2"
+  wmctrl -a $2
+fi

@@ -1,4 +1,10 @@
 #!/bin/sh
-cd ~/opt/jetty-distribution-8.1.14.v20131031
+# 由于jetty的websocket出现A ServletContext is required to access the javax.websocket.server.ServerContainer instance
+# 的错误，暂时没有时间解决，故后端服务换成tomcat8
 
-java -jar start.jar
+# cd ~/opt/jetty-distribution-8.1.14.v20131031
+# java -jar start.jar
+
+cd ~/opt/apache-tomcat-8.0.18
+./bin/startup.sh
+tail -f logs/*out
