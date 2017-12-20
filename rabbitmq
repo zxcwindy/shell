@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rabbithome=/home/david/opt/rabbitmq-3.6.2/sbin
+cd $rabbithome
+./rabbitmq-server

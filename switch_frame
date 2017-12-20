@@ -9,9 +9,7 @@ isActive=$(ps -ef|grep $1 | grep -v grep | wc -l)
 
 if [ $isActive == 2 ]
 then
-echo "$1"
   $1
 else
-echo "$2"
   wmctrl -a $2
 fi

@@ -5,11 +5,14 @@
 #7.0.57
 #7.0.42
 #8.0.18
-tomcat_path=/home/david/opt/apache-tomcat-7.0.42
-cd $tomcat_path
-if test -z "$1"
-then
-    $tomcat_path/bin/startup.sh &&  tail -f $tomcat_path/logs/catalina.out
-else
-    ps -ef|  grep $tomcat_path |grep -v grep | awk '{print $2}' | head -n 1 | xargs -n1 kill -9
-fi
+# export COLUMNS=100000
+# tomcat_path=/home/david/opt/apache-tomcat-7.0.42
+# cd $tomcat_path
+# if test -z "$1"
+# then
+#     $tomcat_path/bin/startup.sh &&  tail -f $tomcat_path/logs/catalina.out
+# else
+#     ps -ef|  grep $tomcat_path |grep -v grep | awk '{print $2}' | head -n 1 | xargs -n1 kill -9
+# fi
+
+/home/david/git/dacp-embedded-tomcat/dist/start.sh $*

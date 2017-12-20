@@ -1,6 +1,13 @@
 #!/bin/bash
-sudo /etc/init.d/oracle-xe start
+sudo /etc/rc.d/rc.oracle-xe start
 lsnrctl start
+
+# result=$(sqlplus -s "/ as sysdba" <<EOF
+# set heading off;
+# startup;
+# EOF
+# )
+# echo $result
 
 result=$(sqlplus -s "/ as sysdba" <<EOF
 set heading off;

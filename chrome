@@ -1,0 +1,2 @@
+#!/bin/bash
+/opt/google/chrome/chrome  --enable-webgl --ignore-gpu-blacklist --allow-file-access-from-files
