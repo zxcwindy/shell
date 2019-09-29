@@ -1,2 +1,6 @@
+#!/bin/bash
+
 cd ~/opt/zookeeper-3.4.6/bin/
+ps -ef|grep "zookeeper.root.logger" | grep -v grep | awk '{print $2}' | xargs -n1 kill -9
+rm -f /data/zk/zookeeper_server.pid
 ./zkServer.sh start

@@ -11,5 +11,5 @@ if [ $isActive == 2 ]
 then
   $1
 else
-  wmctrl -a $2
+  wmctrl -a "$2"
 fi
