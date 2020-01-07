@@ -29,6 +29,7 @@ _eOutput(){
     echo "HostName $eHost" >> $eOutput
     echo "User $eUser" >> $eOutput
     echo "port 22" >> $eOutput
+    echo "host alias $eHostName"
 }
 
 _eError(){
