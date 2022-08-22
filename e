@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 # 将~/.ssh/config中的文件集合为　"129hadoop 192.168.0.129 hadoop" 的形式打印
 # 自动补全获取数组  sed -n '4,$ p' ./config | sed  -n '1h;1!H;$g;s/\n/ /g;s/Host /\nHost /g;$p' | sed '/^$/d' | awk '{for (i = 1; i<NF; i++) if ($i == "Host") printf $(i+1) " ";else if ($i == "HostName") printf $(i+1) " ";else if ($i == "User") print $(i+1);}'
 # sed -n "/10.5.1.44/,/User / p" ~/.ssh/config  | sed -n "N;s/\n/ /;s/HostName //;s/User //; p"
@@ -77,7 +78,7 @@ _ePreSsh
 
 if [ $eIsAdd == true ]
 then
-    cat ~/.ssh/id_rsa.pub | ssh $eTempHost 'cat - >> ~/.ssh/authorized_keys;chmod 700 ~/.ssh;chmod 600 ~/.ssh/authorized_keys'
+    ssh-copy-id -i ~/.ssh/id_rsa.pub  $eTempHost
     _eOutput
 fi
 

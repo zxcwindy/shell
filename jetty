@@ -13,9 +13,8 @@ if [ -z "$1" ]; then
     /home/david/opt/apache-tomcat-8.0.18-dam/bin/shutdown.sh
     /home/david/opt/apache-tomcat-8.0.18-dam/bin/startup.sh
     tail -f /home/david/opt/apache-tomcat-8.0.18-dam/logs/*out
-    # stop-tomcat 9990 service
-    # tomcat -p 9990 -c service -w /home/david/zxc/service -b 512M
 else
     /home/david/opt/apache-tomcat-8.0.18-dam/bin/shutdown.sh
 fi
 
+# /home/david/git/zxc-dev/backend/run.sh "/home/david/git/zxc-dev/backend/"

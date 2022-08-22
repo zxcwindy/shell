@@ -1,2 +1,3 @@
 #!/bin/bash
-redis-server /etc/redis/redis.conf
+# redis-server /etc/redis/redis.conf
+sudo systemctl restart redis-server

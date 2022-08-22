@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd ~/opt/wls12130/user_projects/domains/mydomain/bin/
+cd ~/opt/wls122130/user_projects/domains/base_domain/ || exit
 ./startWebLogic.sh

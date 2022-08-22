@@ -1,5 +1,15 @@
 #!/bin/bash
+export JAVA_HOME=/opt/jdk1.8.0_202
+export CLASSPATH=$JAVA_HOME/lib
+export PATH=$JAVA_HOME/bin:$PATH
 # eclipse tab样式调整版本
-export SWT_GTK3=0
-env /usr/share/themes/oxygen-gtk/gtk-2.0/gtkrc:.gtkrc-eclipse
-~/opt/eclipse-neon/eclipse
+# export SWT_GTK3=0
+# export SWT_GTK4=1
+# export SWT_GTK4=0
+# env /usr/share/themes/Yaru-prussiangreen/gtk-2.0/gtkrc:/home/david/.bin/.gtkrc-eclipse
+# env /home/david/.bin/.gtkrc-eclipse
+# env /usr/share/themes/oxygen-gtk/gtk-2.0/gtkrc:.gtkrc-eclipse
+# ulimit -c unlimited
+/opt/sts-4.15.1.RELEASE/SpringToolSuite4
+# /opt/eclipse-neon/eclipse
+# /opt/eclipse/eclipse
