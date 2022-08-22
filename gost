@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# nohup /home/david/opt/shadowsocks-1.7.2/sslocal -c /home/david/opt/shadowsocks-1.7.2/config.json > /dev/null &
+# nohup /home/david/zxc/google/gost_2.4/gost -L=:19090 -F=ss://rc4-md5:sEXFZwJ2558X@cu.91js.pw:31296 > /dev/null &
+# zhw
+# nohup /home/david/zxc/google/gost_2.4/gost -L=:19090 -F=ss://aes-256-cfb:Abcd\!234@47.240.66.110:1701 > /dev/null &
+# nohup /home/david/zxc/google/gost_2.4/gost -L=:19090 -F=ss://chacha20-ietf:liu1990@104.224.171.92:1990 > /dev/null
+
+# nohup /home/david/zxc/google/gost_2.4/gost -L=:19090 -F=ss://aes-256-cfb:qVG2ImYMZ4z6HHj9@128.1.35.33:3306 > /dev/null &
+
+# curl --location --request POST 'https://api.vultr.com/v2/instances/7ee70d33-b205-496a-aef9-c800bd5748c4/start' --header 'Authorization: Bearer YBFSTYQ4D24CCJMEZ3CHRU57HY4G5KOEBGPQ'
+
+# sleep 5s
+
+# ssh -n -f root@104.238.151.30 "sh -c 'cd /root; nohup ./gost-linux-amd64-2.10.1 -L=ss://chacha20-ietf-poly1305:qVG2ImYMZ4z6HHj9@:8333 > /dev/null 2>&1 &'"
+
+nohup /home/david/zxc/google/gost-linux-amd64-2.10.1 -L=:19090 -F=ss://chacha20-ietf-poly1305:qVG2ImYMZ4z6HHj9@3.36.105.60:58080 > /dev/null &
+
+# nohup /home/david/zxc/google/gost-linux-amd64-2.10.1 -L=:19090 -F=ss://chacha20-ietf-poly1305:qVG2ImYMZ4z6HHj9@45.63.23.191:1433 > /dev/null &
+
+# chacha20-ietf-poly1305:qVG2ImYMZ4z6HHj9@128.1.35.33:3306
+# chacha20-ietf-poly1305:fjskfjsajs991@152.32.245.181:3322

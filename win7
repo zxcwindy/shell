@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/usr/lib/virtualbox/VirtualBoxVM --comment win7 --startvm 1b401daa-7887-4619-9c6c-2dfb26fa8a81 --no-startvm-errormsgbox

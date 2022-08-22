@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ~/opt/xmind-8/XMind_amd64
+./XMind

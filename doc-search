@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+if test -z "$2"
+then
+    echo "输入2个参数
+1、word文件名
+2、需要搜索的字段"
+else
+    unzip -p "$1" | grep -q "$2"
+    [ $? -eq 0 ] && echo "$1"
+fi

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo openresty -c /home/david/opt/openresty-1.11.2.3/nginx/conf/nginx.conf $*

@@ -1,0 +1,8 @@
+#!/bin/bash
+ls -1 $1 | while read jarfile; do
+    jar -tf $jarfile | grep "$2"
+    if [ $? -eq 0 ]
+    then
+	echo "find class in jar : "$jarfile
+    fi
+done

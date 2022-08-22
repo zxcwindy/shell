@@ -1,0 +1,24 @@
+#!/bin/bash
+
+cd ~/opt/flink-1.10.3/bin
+
+case "$1" in
+    start)
+	./start-cluster.sh
+	;;
+    stop)
+	./stop-cluster.sh
+	;;
+
+    submit)
+	./flink run ${@:2}
+	;;
+
+    submit-yarn)
+	./flink run  -m yarn-cluster ${@:2}
+	;;
+    ,*)
+	echo "Usage: {start|stop|submit|submit-yarn}" >&2
+	exit 1
+	;;
+esac

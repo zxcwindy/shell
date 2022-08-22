@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export http_proxy=socks5://49.234.40.183:58080
+
+git push --force --all origin

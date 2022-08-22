@@ -1,0 +1,39 @@
+#!/bin/bash
+
+groupId="$1"
+artifactId="$2"
+versionId="0.0.1-SNAPSHOT"
+
+if [ $# -gt 2 ]; then
+    versionId="$3"
+fi
+
+if [[ -f "$artifactId" || -d  "$artifactId" ]]; then
+    echo "$artifactId 已经存在"
+else
+    mkdir "$artifactId"
+    cd "$artifactId"
+    groupPath=${groupId//\./\/}
+    artifactPath=${artifactId//\./\/}
+    mkdir -p "src/main/java/$groupPath/$artifactPath"
+    mkdir -p "src/main/resources"
+    mkdir -p "src/test/java"
+    echo "<project xmlns=\"http://maven.apache.org/POM/4.0.0\"
+	xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+	xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>$groupId</groupId>
+	<artifactId>$artifactId</artifactId>
+	<version>$versionId</version>
+
+	<parent>
+		<groupId>com.kun.framework</groupId>
+		<artifactId>parent</artifactId>
+		<version>3.6.1-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+
+	</dependencies>
+</project>" > pmo.xml
+fi

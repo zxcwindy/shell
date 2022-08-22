@@ -1,0 +1,17 @@
+#!/bin/bash
+export http_proxy=socks5://49.234.40.183:58080
+git branch -r | grep -v '\->' | sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+git fetch --all
+git pull --all
+
+if [ -n "$1" ]; then
+    tempBranch=$(git branch | grep "$1")
+    if [[ $tempBranch == *$'\n'* ]]
+    then
+	echo "从以下分支选择一个checkout"
+	read -p "$tempBranch：" branchName
+	git checkout "$branchName"
+    else
+	git checkout $tempBranch
+    fi
+fi
