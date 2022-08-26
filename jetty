@@ -10,11 +10,11 @@
 # tail -f logs/*out
 
 if [ -z "$1" ]; then
-    /home/david/opt/apache-tomcat-8.0.18-dam/bin/shutdown.sh
+    ps -ef|grep "apache-tomcat-8.0.18-dam" |grep -v grep| awk '{print $2}' | xargs -n1 kill -9
     /home/david/opt/apache-tomcat-8.0.18-dam/bin/startup.sh
     tail -f /home/david/opt/apache-tomcat-8.0.18-dam/logs/*out
 else
-    /home/david/opt/apache-tomcat-8.0.18-dam/bin/shutdown.sh
+    ps -ef|grep "apache-tomcat-8.0.18-dam" |grep -v grep| awk '{print $2}' | xargs -n1 kill -9
 fi
 
 # /home/david/git/zxc-dev/backend/run.sh "/home/david/git/zxc-dev/backend/"

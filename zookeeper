@@ -1,5 +1,5 @@
 #!/bin/bash
 cd ~/opt/apache-zookeeper-3.8.0-bin/bin
-ps -ef|grep "zookeeper.root.logger" | grep -v grep | awk '{print $2}' | xargs -n1 kill -9
+ps -ef|grep "zookeeper.log.dir" | grep -v grep | awk '{print $2}' | xargs -n1 kill -9
 rm -f /opt/data/zookeeper/zookeeper_server.pid
 ./zkServer.sh start

@@ -35,5 +35,6 @@ else
 	<dependencies>
 
 	</dependencies>
-</project>" > pmo.xml
+</project>" > pom.xml
+    git init
 fi
